@@ -24,11 +24,14 @@ namespace TaskManagerDOTN
         private void LoadAllProcesses() 
         {
             processes = Process.GetProcesses();
-            processesDataGridView.Columns.Add("Name","Name");
-            foreach (Process process in processes)
+            processesDataGridView.Columns.Add("Process", "Process");
+            processesDataGridView.Columns.Add("PagedMemorySize64", "PagedMemorySize64");
+
+            for (int i = 0; i < processes.Length-1; i++)
             {
-                processesDataGridView.Rows.Add(process.ProcessName);
-            }
+                processesDataGridView.Rows.Add(processes[i].ProcessName);
+                processesDataGridView.Rows[i].Cells[1].Value = processes[i].PagedMemorySize64;
+            }          
         }
 
     }
