@@ -31,11 +31,13 @@ namespace TaskManagerDOTN
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Processes = new System.Windows.Forms.TabPage();
+            this.end_process = new System.Windows.Forms.Button();
+            this.processesListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.processName = new System.Windows.Forms.Label();
             this.Preformance = new System.Windows.Forms.TabPage();
             this.Services = new System.Windows.Forms.TabPage();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.memoryVal = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Processes.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +55,9 @@ namespace TaskManagerDOTN
             // 
             // Processes
             // 
-            this.Processes.Controls.Add(this.listBox1);
+            this.Processes.Controls.Add(this.memoryVal);
+            this.Processes.Controls.Add(this.end_process);
+            this.Processes.Controls.Add(this.processesListBox);
             this.Processes.Controls.Add(this.label1);
             this.Processes.Controls.Add(this.processName);
             this.Processes.Location = new System.Drawing.Point(4, 24);
@@ -64,14 +68,34 @@ namespace TaskManagerDOTN
             this.Processes.Text = "Processes";
             this.Processes.UseVisualStyleBackColor = true;
             // 
+            // end_process
+            // 
+            this.end_process.Location = new System.Drawing.Point(671, 383);
+            this.end_process.Name = "end_process";
+            this.end_process.Size = new System.Drawing.Size(93, 23);
+            this.end_process.TabIndex = 3;
+            this.end_process.Text = "End process";
+            this.end_process.UseVisualStyleBackColor = true;
+            this.end_process.Click += new System.EventHandler(this.end_process_Click);
+            // 
+            // processesListBox
+            // 
+            this.processesListBox.FormattingEnabled = true;
+            this.processesListBox.ItemHeight = 15;
+            this.processesListBox.Location = new System.Drawing.Point(3, 63);
+            this.processesListBox.Name = "processesListBox";
+            this.processesListBox.Size = new System.Drawing.Size(195, 334);
+            this.processesListBox.TabIndex = 2;
+            this.processesListBox.SelectedIndexChanged += new System.EventHandler(this.processesListBox_SelectedIndexChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(217, 45);
+            this.label1.Location = new System.Drawing.Point(204, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.Size = new System.Drawing.Size(89, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "Memory usage:";
             // 
             // processName
             // 
@@ -101,20 +125,20 @@ namespace TaskManagerDOTN
             this.Services.Text = "Services";
             this.Services.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // memoryVal
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 15;
-            this.listBox1.Location = new System.Drawing.Point(3, 63);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 334);
-            this.listBox1.TabIndex = 2;
+            this.memoryVal.AutoSize = true;
+            this.memoryVal.Location = new System.Drawing.Point(299, 63);
+            this.memoryVal.Name = "memoryVal";
+            this.memoryVal.Size = new System.Drawing.Size(14, 15);
+            this.memoryVal.TabIndex = 4;
+            this.memoryVal.Text = "#";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 571);
+            this.ClientSize = new System.Drawing.Size(800, 451);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -133,7 +157,9 @@ namespace TaskManagerDOTN
         private System.Windows.Forms.TabPage Services;
         private System.Windows.Forms.Label processName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox processesListBox;
+        private System.Windows.Forms.Button end_process;
+        private System.Windows.Forms.Label memoryVal;
     }
 }
 

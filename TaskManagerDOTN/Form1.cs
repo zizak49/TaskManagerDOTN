@@ -15,10 +15,14 @@ namespace TaskManagerDOTN
 {
     public partial class Form1 : Form
     {
-        public List<Process> processes;
+        private List<Process> processes;
+        private Process selectedProcess;
+        private int selectedProcessIndex;
         private ComputerInfo computerInfo;
+
         private ulong totalMemory;
         private long totalUsedMemory = 0;
+
 
 
 
@@ -34,9 +38,11 @@ namespace TaskManagerDOTN
         {
             processes = Process.GetProcesses().ToList();
 
-            listBox1.DataSource = processes;
-            listBox1.ValueMember = "ProcessName";
-            listBox1.Refresh();
+            foreach (Process process in processes)
+            {
+                processesListBox.Items.Add(process);
+            }
+            processesListBox.ValueMember = "ProcessName";
 
 
                 //Process memory usage
@@ -68,5 +74,43 @@ namespace TaskManagerDOTN
            
         }
 
+        private void end_process_Click(object sender, EventArgs e)
+        {
+            selectedProcess = processes[processesListBox.SelectedIndex];
+
+            selectedProcess.Kill();
+            selectedProcess.WaitForExit();
+
+            processes.Remove(selectedProcess);
+            processesListBox.Items.RemoveAt(processesListBox.SelectedIndex);
+
+            processesListBox.Refresh();
+        }
+
+        private void processesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DisplayProcessInfo(processes[processesListBox.SelectedIndex]);
+            }
+            catch (Exception)
+            
+                processesListBox.SelectedIndex = 1;
+            }
+        }
+
+        private void DisplayProcessInfo(Process selectedProcess) 
+        {
+            memoryVal.Text = ConvertToMB(selectedProcess.WorkingSet64).ToString() + " MB";
+        }
+
+        private long ConvertToMB(long number) 
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                number /= 1024;
+            }
+            return number;
+        }
     }
 }
