@@ -31,10 +31,18 @@ namespace TaskManagerDOTN
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.SystemInformation = new System.Windows.Forms.TabPage();
-            this.osPlatfrom = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cache = new System.Windows.Forms.Label();
+            this.socketType = new System.Windows.Forms.Label();
+            this.prrocesorrName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.version = new System.Windows.Forms.Label();
+            this.serialNumber = new System.Windows.Forms.Label();
+            this.build = new System.Windows.Forms.Label();
             this.osVersion = new System.Windows.Forms.Label();
             this.Processes = new System.Windows.Forms.TabPage();
-            this.label3totalUsedMemoryVal = new System.Windows.Forms.Label();
+            this.totalUsedMemoryVal = new System.Windows.Forms.Label();
             this.totalUsedMemoryText = new System.Windows.Forms.Label();
             this.processMemoryUsageVal = new System.Windows.Forms.Label();
             this.end_process = new System.Windows.Forms.Button();
@@ -43,7 +51,6 @@ namespace TaskManagerDOTN
             this.processName = new System.Windows.Forms.Label();
             this.Preformance = new System.Windows.Forms.TabPage();
             this.Services = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.SystemInformation.SuspendLayout();
             this.Processes.SuspendLayout();
@@ -63,8 +70,15 @@ namespace TaskManagerDOTN
             // 
             // SystemInformation
             // 
+            this.SystemInformation.Controls.Add(this.label7);
+            this.SystemInformation.Controls.Add(this.cache);
+            this.SystemInformation.Controls.Add(this.socketType);
+            this.SystemInformation.Controls.Add(this.prrocesorrName);
+            this.SystemInformation.Controls.Add(this.label2);
             this.SystemInformation.Controls.Add(this.label1);
-            this.SystemInformation.Controls.Add(this.osPlatfrom);
+            this.SystemInformation.Controls.Add(this.version);
+            this.SystemInformation.Controls.Add(this.serialNumber);
+            this.SystemInformation.Controls.Add(this.build);
             this.SystemInformation.Controls.Add(this.osVersion);
             this.SystemInformation.Location = new System.Drawing.Point(4, 24);
             this.SystemInformation.Name = "SystemInformation";
@@ -73,19 +87,91 @@ namespace TaskManagerDOTN
             this.SystemInformation.Text = "System Information";
             this.SystemInformation.UseVisualStyleBackColor = true;
             // 
-            // osPlatfrom
+            // label7
             // 
-            this.osPlatfrom.AutoSize = true;
-            this.osPlatfrom.Location = new System.Drawing.Point(52, 43);
-            this.osPlatfrom.Name = "osPlatfrom";
-            this.osPlatfrom.Size = new System.Drawing.Size(56, 15);
-            this.osPlatfrom.TabIndex = 1;
-            this.osPlatfrom.Text = "Platfrom:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(60, 225);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 15);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "label7";
+            // 
+            // cache
+            // 
+            this.cache.AutoSize = true;
+            this.cache.Location = new System.Drawing.Point(60, 275);
+            this.cache.Name = "cache";
+            this.cache.Size = new System.Drawing.Size(95, 15);
+            this.cache.TabIndex = 9;
+            this.cache.Text = "Processor cache:";
+            // 
+            // socketType
+            // 
+            this.socketType.AutoSize = true;
+            this.socketType.Location = new System.Drawing.Point(60, 250);
+            this.socketType.Name = "socketType";
+            this.socketType.Size = new System.Drawing.Size(45, 15);
+            this.socketType.TabIndex = 8;
+            this.socketType.Text = "Socket:";
+            // 
+            // prrocesorrName
+            // 
+            this.prrocesorrName.AutoSize = true;
+            this.prrocesorrName.Location = new System.Drawing.Point(60, 200);
+            this.prrocesorrName.Name = "prrocesorrName";
+            this.prrocesorrName.Size = new System.Drawing.Size(61, 15);
+            this.prrocesorrName.TabIndex = 7;
+            this.prrocesorrName.Text = "Processor:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 167);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(115, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Device specification:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(169, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Operating system infromation:";
+            // 
+            // version
+            // 
+            this.version.AutoSize = true;
+            this.version.Location = new System.Drawing.Point(60, 125);
+            this.version.Name = "version";
+            this.version.Size = new System.Drawing.Size(51, 15);
+            this.version.TabIndex = 5;
+            this.version.Text = "Version: ";
+            // 
+            // serialNumber
+            // 
+            this.serialNumber.AutoSize = true;
+            this.serialNumber.Location = new System.Drawing.Point(60, 75);
+            this.serialNumber.Name = "serialNumber";
+            this.serialNumber.Size = new System.Drawing.Size(86, 15);
+            this.serialNumber.TabIndex = 3;
+            this.serialNumber.Text = "Serial number: ";
+            // 
+            // build
+            // 
+            this.build.AutoSize = true;
+            this.build.Location = new System.Drawing.Point(60, 100);
+            this.build.Name = "build";
+            this.build.Size = new System.Drawing.Size(40, 15);
+            this.build.TabIndex = 2;
+            this.build.Text = "Build: ";
             // 
             // osVersion
             // 
             this.osVersion.AutoSize = true;
-            this.osVersion.Location = new System.Drawing.Point(52, 73);
+            this.osVersion.Location = new System.Drawing.Point(60, 50);
             this.osVersion.Name = "osVersion";
             this.osVersion.Size = new System.Drawing.Size(66, 15);
             this.osVersion.TabIndex = 0;
@@ -93,7 +179,7 @@ namespace TaskManagerDOTN
             // 
             // Processes
             // 
-            this.Processes.Controls.Add(this.label3totalUsedMemoryVal);
+            this.Processes.Controls.Add(this.totalUsedMemoryVal);
             this.Processes.Controls.Add(this.totalUsedMemoryText);
             this.Processes.Controls.Add(this.processMemoryUsageVal);
             this.Processes.Controls.Add(this.end_process);
@@ -108,14 +194,14 @@ namespace TaskManagerDOTN
             this.Processes.Text = "Processes";
             this.Processes.UseVisualStyleBackColor = true;
             // 
-            // label3totalUsedMemoryVal
+            // totalUsedMemoryVal
             // 
-            this.label3totalUsedMemoryVal.AutoSize = true;
-            this.label3totalUsedMemoryVal.Location = new System.Drawing.Point(205, 45);
-            this.label3totalUsedMemoryVal.Name = "label3totalUsedMemoryVal";
-            this.label3totalUsedMemoryVal.Size = new System.Drawing.Size(14, 15);
-            this.label3totalUsedMemoryVal.TabIndex = 6;
-            this.label3totalUsedMemoryVal.Text = "#";
+            this.totalUsedMemoryVal.AutoSize = true;
+            this.totalUsedMemoryVal.Location = new System.Drawing.Point(205, 45);
+            this.totalUsedMemoryVal.Name = "totalUsedMemoryVal";
+            this.totalUsedMemoryVal.Size = new System.Drawing.Size(14, 15);
+            this.totalUsedMemoryVal.TabIndex = 6;
+            this.totalUsedMemoryVal.Text = "#";
             // 
             // totalUsedMemoryText
             // 
@@ -192,15 +278,6 @@ namespace TaskManagerDOTN
             this.Services.Text = "Services";
             this.Services.UseVisualStyleBackColor = true;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 117);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -229,13 +306,22 @@ namespace TaskManagerDOTN
         private System.Windows.Forms.ListBox processesListBox;
         private System.Windows.Forms.Button end_process;
         private System.Windows.Forms.Label processMemoryUsageVal;
-        private System.Windows.Forms.Label label3totalUsedMemoryVal;
+        private System.Windows.Forms.Label totalUsedMemoryVal;
         private System.Windows.Forms.Label totalUsedMemoryText;
         private System.Windows.Forms.TabPage SystemInformation;
-        private System.Windows.Forms.Label osVersion;
-        private System.Windows.Forms.Label osType;
-        private System.Windows.Forms.Label osPlatfrom;
-        private System.Windows.Forms.Label label1;
+
+        public System.Windows.Forms.Label osVersion;
+        public System.Windows.Forms.Label osType;
+        public System.Windows.Forms.Label build;
+        public System.Windows.Forms.Label version;
+        public System.Windows.Forms.Label serialNumber;
+
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label cache;
+        public System.Windows.Forms.Label socketType;
+        public System.Windows.Forms.Label prrocesorrName;
+        public System.Windows.Forms.Label label2;
     }
 }
 
