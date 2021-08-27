@@ -16,3 +16,6 @@ C:\Users\Mislav\source\repos\TaskManagerDOTN\TaskManagerDOTN\obj\Debug\net5.0-wi
 C:\Users\Mislav\source\repos\TaskManagerDOTN\TaskManagerDOTN\obj\Debug\net5.0-windows\ref\TaskManagerDOTN.dll
 C:\Users\Mislav\source\repos\TaskManagerDOTN\TaskManagerDOTN\obj\Debug\net5.0-windows\TaskManagerDOTN.pdb
 C:\Users\Mislav\source\repos\TaskManagerDOTN\TaskManagerDOTN\obj\Debug\net5.0-windows\TaskManagerDOTN.genruntimeconfig.cache
+C:\Users\Mislav\source\repos\TaskManagerDOTN\TaskManagerDOTN\bin\Debug\net5.0-windows\System.Management.dll
+C:\Users\Mislav\source\repos\TaskManagerDOTN\TaskManagerDOTN\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.0\System.Management.dll
+C:\Users\Mislav\source\repos\TaskManagerDOTN\TaskManagerDOTN\obj\Debug\net5.0-windows\TaskManagerDOTN.csproj.CopyComplete

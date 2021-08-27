@@ -30,6 +30,9 @@ namespace TaskManagerDOTN
         private void InitializeComponent()
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.SystemInformation = new System.Windows.Forms.TabPage();
+            this.osPlatfrom = new System.Windows.Forms.Label();
+            this.osVersion = new System.Windows.Forms.Label();
             this.Processes = new System.Windows.Forms.TabPage();
             this.label3totalUsedMemoryVal = new System.Windows.Forms.Label();
             this.totalUsedMemoryText = new System.Windows.Forms.Label();
@@ -40,12 +43,15 @@ namespace TaskManagerDOTN
             this.processName = new System.Windows.Forms.Label();
             this.Preformance = new System.Windows.Forms.TabPage();
             this.Services = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
+            this.SystemInformation.SuspendLayout();
             this.Processes.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.SystemInformation);
             this.tabControl1.Controls.Add(this.Processes);
             this.tabControl1.Controls.Add(this.Preformance);
             this.tabControl1.Controls.Add(this.Services);
@@ -54,6 +60,36 @@ namespace TaskManagerDOTN
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(775, 437);
             this.tabControl1.TabIndex = 0;
+            // 
+            // SystemInformation
+            // 
+            this.SystemInformation.Controls.Add(this.label1);
+            this.SystemInformation.Controls.Add(this.osPlatfrom);
+            this.SystemInformation.Controls.Add(this.osVersion);
+            this.SystemInformation.Location = new System.Drawing.Point(4, 24);
+            this.SystemInformation.Name = "SystemInformation";
+            this.SystemInformation.Size = new System.Drawing.Size(767, 409);
+            this.SystemInformation.TabIndex = 3;
+            this.SystemInformation.Text = "System Information";
+            this.SystemInformation.UseVisualStyleBackColor = true;
+            // 
+            // osPlatfrom
+            // 
+            this.osPlatfrom.AutoSize = true;
+            this.osPlatfrom.Location = new System.Drawing.Point(52, 43);
+            this.osPlatfrom.Name = "osPlatfrom";
+            this.osPlatfrom.Size = new System.Drawing.Size(56, 15);
+            this.osPlatfrom.TabIndex = 1;
+            this.osPlatfrom.Text = "Platfrom:";
+            // 
+            // osVersion
+            // 
+            this.osVersion.AutoSize = true;
+            this.osVersion.Location = new System.Drawing.Point(52, 73);
+            this.osVersion.Name = "osVersion";
+            this.osVersion.Size = new System.Drawing.Size(66, 15);
+            this.osVersion.TabIndex = 0;
+            this.osVersion.Text = "OS Version:";
             // 
             // Processes
             // 
@@ -156,6 +192,15 @@ namespace TaskManagerDOTN
             this.Services.Text = "Services";
             this.Services.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(52, 117);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -165,6 +210,8 @@ namespace TaskManagerDOTN
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
+            this.SystemInformation.ResumeLayout(false);
+            this.SystemInformation.PerformLayout();
             this.Processes.ResumeLayout(false);
             this.Processes.PerformLayout();
             this.ResumeLayout(false);
@@ -184,6 +231,11 @@ namespace TaskManagerDOTN
         private System.Windows.Forms.Label processMemoryUsageVal;
         private System.Windows.Forms.Label label3totalUsedMemoryVal;
         private System.Windows.Forms.Label totalUsedMemoryText;
+        private System.Windows.Forms.TabPage SystemInformation;
+        private System.Windows.Forms.Label osVersion;
+        private System.Windows.Forms.Label osType;
+        private System.Windows.Forms.Label osPlatfrom;
+        private System.Windows.Forms.Label label1;
     }
 }
 

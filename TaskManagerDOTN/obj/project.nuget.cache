@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "1SjpsElcmmLfVsdY98DXVJH4HuU6pDtjK6JM8w9YOg9GzkMPMLt6DPa8N0aOe0ImqWSl0C9Xd6lZgkHsMbYGIw==",
+  "dgSpecHash": "NglRGGG4t/Pa0U3Of4GOwdzElXgwrvR6vYHXkPSLlGwW6ZGE5lM7tSRw4owMmRmiB0lAP+gRYkGGVD60CpyJxA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mislav\\source\\repos\\TaskManagerDOTN\\TaskManagerDOTN\\TaskManagerDOTN.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Mislav\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Mislav\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\Mislav\\.nuget\\packages\\system.codedom\\5.0.0\\system.codedom.5.0.0.nupkg.sha512",
+    "C:\\Users\\Mislav\\.nuget\\packages\\system.management\\5.0.0\\system.management.5.0.0.nupkg.sha512",
+    "C:\\Users\\Mislav\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\Mislav\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

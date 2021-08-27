@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using Microsoft.Win32;
 using Microsoft.VisualBasic.Devices;
+using System.Management;
 
 namespace TaskManagerDOTN
 {
@@ -23,16 +24,27 @@ namespace TaskManagerDOTN
         private ulong totalMemory;
         private long totalUsedMemory = 0;
 
+        private OperatingSystemInfo operatingSystemInfo;
+        private CPU_Info cpuInfo;
+
         private Timer dataRefresh;
-
-
 
         public Form1()
         {
             InitializeComponent();
+
             LoadAllProcesses();
+
             computerInfo = new ComputerInfo(); 
-            LoadSystemInformation(); 
+
+            LoadSystemInformation();
+
+            osPlatfrom.Text = "Platfrom: " + computerInfo.OSPlatform;
+            osVersion.Text = "OS Version: " + computerInfo.OSFullName;
+
+            label1.Text = computerInfo.InstalledUICulture.Name;
+            
+            //Timer for updating data
             InitTimer();
         }
 
@@ -50,14 +62,31 @@ namespace TaskManagerDOTN
 
         private void LoadSystemInformation() 
         {
-            totalMemory = computerInfo.TotalPhysicalMemory;
+            var wmi = new ManagementObjectSearcher("select * from Win32_OperatingSystem").Get().Cast<ManagementObject>().First();
 
-            for (int i = 0; i < 2; i++)
-            {
-                totalMemory = totalMemory / 1024;
-            }
+            operatingSystemInfo.name = ((string)wmi["Caption"]).Trim();
+            operatingSystemInfo.version=(string)wmi["Version"];
+            operatingSystemInfo.maxProcessCount=(uint)wmi["MaxNumberOfProcesses"];
+            operatingSystemInfo.maxProcessRAM=(ulong)wmi["MaxProcessMemorySize"];
+            operatingSystemInfo.architecture=(string)wmi["OSArchitecture"];
+            operatingSystemInfo.serialNumber=(string)wmi["SerialNumber"];
+            operatingSystemInfo.build=(string)wmi["BuildNumber"];
 
-            totalMemory = totalMemory / 1000;
+            var cpu =new ManagementObjectSearcher("select * from Win32_Processor").Get().Cast<ManagementObject>().First();
+
+            cpuInfo.iD = (string)cpu["ProcessorId"];
+            cpuInfo.socket = (string)cpu["SocketDesignation"];
+            cpuInfo.name = (string)cpu["Name"];
+            cpuInfo.description = (string)cpu["Caption"];
+            cpuInfo.addressWidth = (ushort)cpu["AddressWidth"];
+            cpuInfo.dataWidth = (ushort)cpu["DataWidth"];
+            cpuInfo.architecture = (ushort)cpu["Architecture"];
+            cpuInfo.speedMHz = (uint)cpu["MaxClockSpeed"];
+            cpuInfo.busSpeedMHz = (uint)cpu["ExtClock"];
+            cpuInfo.l2Cache = (uint)cpu["L2CacheSize"];
+            cpuInfo.l3Cache = (uint)cpu["L3CacheSize"];
+            cpuInfo.cores = (uint)cpu["NumberOfCores"];
+            cpuInfo.threads = (uint)cpu["NumberOfLogicalProcessors"];
         }
 
         private void end_process_Click(object sender, EventArgs e)
