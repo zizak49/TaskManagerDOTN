@@ -31,6 +31,8 @@ namespace TaskManagerDOTN
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Processes = new System.Windows.Forms.TabPage();
+            this.label3totalUsedMemoryVal = new System.Windows.Forms.Label();
+            this.totalUsedMemoryText = new System.Windows.Forms.Label();
             this.processMemoryUsageVal = new System.Windows.Forms.Label();
             this.end_process = new System.Windows.Forms.Button();
             this.processesListBox = new System.Windows.Forms.ListBox();
@@ -38,8 +40,6 @@ namespace TaskManagerDOTN
             this.processName = new System.Windows.Forms.Label();
             this.Preformance = new System.Windows.Forms.TabPage();
             this.Services = new System.Windows.Forms.TabPage();
-            this.totalUsedMemoryText = new System.Windows.Forms.Label();
-            this.label3totalUsedMemoryVal = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Processes.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +71,24 @@ namespace TaskManagerDOTN
             this.Processes.TabIndex = 0;
             this.Processes.Text = "Processes";
             this.Processes.UseVisualStyleBackColor = true;
+            // 
+            // label3totalUsedMemoryVal
+            // 
+            this.label3totalUsedMemoryVal.AutoSize = true;
+            this.label3totalUsedMemoryVal.Location = new System.Drawing.Point(205, 45);
+            this.label3totalUsedMemoryVal.Name = "label3totalUsedMemoryVal";
+            this.label3totalUsedMemoryVal.Size = new System.Drawing.Size(14, 15);
+            this.label3totalUsedMemoryVal.TabIndex = 6;
+            this.label3totalUsedMemoryVal.Text = "#";
+            // 
+            // totalUsedMemoryText
+            // 
+            this.totalUsedMemoryText.AutoSize = true;
+            this.totalUsedMemoryText.Location = new System.Drawing.Point(88, 45);
+            this.totalUsedMemoryText.Name = "totalUsedMemoryText";
+            this.totalUsedMemoryText.Size = new System.Drawing.Size(111, 15);
+            this.totalUsedMemoryText.TabIndex = 5;
+            this.totalUsedMemoryText.Text = "Total used memory:";
             // 
             // processMemoryUsageVal
             // 
@@ -137,24 +155,6 @@ namespace TaskManagerDOTN
             this.Services.TabIndex = 2;
             this.Services.Text = "Services";
             this.Services.UseVisualStyleBackColor = true;
-            // 
-            // totalUsedMemoryText
-            // 
-            this.totalUsedMemoryText.AutoSize = true;
-            this.totalUsedMemoryText.Location = new System.Drawing.Point(88, 45);
-            this.totalUsedMemoryText.Name = "totalUsedMemoryText";
-            this.totalUsedMemoryText.Size = new System.Drawing.Size(111, 15);
-            this.totalUsedMemoryText.TabIndex = 5;
-            this.totalUsedMemoryText.Text = "Total used memory:";
-            // 
-            // label3totalUsedMemoryVal
-            // 
-            this.label3totalUsedMemoryVal.AutoSize = true;
-            this.label3totalUsedMemoryVal.Location = new System.Drawing.Point(205, 45);
-            this.label3totalUsedMemoryVal.Name = "label3totalUsedMemoryVal";
-            this.label3totalUsedMemoryVal.Size = new System.Drawing.Size(14, 15);
-            this.label3totalUsedMemoryVal.TabIndex = 6;
-            this.label3totalUsedMemoryVal.Text = "#";
             // 
             // Form1
             // 
