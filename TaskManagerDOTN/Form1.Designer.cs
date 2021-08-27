@@ -31,13 +31,13 @@ namespace TaskManagerDOTN
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Processes = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.processName = new System.Windows.Forms.Label();
-            this.processesDataGridView = new System.Windows.Forms.DataGridView();
             this.Preformance = new System.Windows.Forms.TabPage();
             this.Services = new System.Windows.Forms.TabPage();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.Processes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.processesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -53,8 +53,9 @@ namespace TaskManagerDOTN
             // 
             // Processes
             // 
+            this.Processes.Controls.Add(this.listBox1);
+            this.Processes.Controls.Add(this.label1);
             this.Processes.Controls.Add(this.processName);
-            this.Processes.Controls.Add(this.processesDataGridView);
             this.Processes.Location = new System.Drawing.Point(4, 24);
             this.Processes.Name = "Processes";
             this.Processes.Padding = new System.Windows.Forms.Padding(3);
@@ -62,6 +63,15 @@ namespace TaskManagerDOTN
             this.Processes.TabIndex = 0;
             this.Processes.Text = "Processes";
             this.Processes.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(217, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "label1";
             // 
             // processName
             // 
@@ -71,15 +81,6 @@ namespace TaskManagerDOTN
             this.processName.Size = new System.Drawing.Size(39, 15);
             this.processName.TabIndex = 1;
             this.processName.Text = "Name";
-            // 
-            // processesDataGridView
-            // 
-            this.processesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.processesDataGridView.Location = new System.Drawing.Point(3, 63);
-            this.processesDataGridView.Name = "processesDataGridView";
-            this.processesDataGridView.RowTemplate.Height = 25;
-            this.processesDataGridView.Size = new System.Drawing.Size(761, 343);
-            this.processesDataGridView.TabIndex = 0;
             // 
             // Preformance
             // 
@@ -100,18 +101,26 @@ namespace TaskManagerDOTN
             this.Services.Text = "Services";
             this.Services.UseVisualStyleBackColor = true;
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(3, 63);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 334);
+            this.listBox1.TabIndex = 2;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 571);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.tabControl1.ResumeLayout(false);
             this.Processes.ResumeLayout(false);
             this.Processes.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.processesDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -123,7 +132,8 @@ namespace TaskManagerDOTN
         private System.Windows.Forms.TabPage Preformance;
         private System.Windows.Forms.TabPage Services;
         private System.Windows.Forms.Label processName;
-        private System.Windows.Forms.DataGridView processesDataGridView;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

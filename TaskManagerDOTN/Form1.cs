@@ -15,9 +15,12 @@ namespace TaskManagerDOTN
 {
     public partial class Form1 : Form
     {
-        public Process[] processes;
+        public List<Process> processes;
         private ComputerInfo computerInfo;
-        ulong totalMemory;
+        private ulong totalMemory;
+        private long totalUsedMemory = 0;
+
+
 
         public Form1()
         {
@@ -29,25 +32,23 @@ namespace TaskManagerDOTN
 
         private void LoadAllProcesses() 
         {
-            processes = Process.GetProcesses();
-            processesDataGridView.Columns.Add("Process", "Process");
-            processesDataGridView.Columns.Add("PagedMemorySize64", "PagedMemorySize64");
+            processes = Process.GetProcesses().ToList();
 
-            for (int i = 0; i < processes.Length-1; i++)
-            {
-                //Proces names
-                processesDataGridView.Rows.Add(processes[i].ProcessName);
+            listBox1.DataSource = processes;
+            listBox1.ValueMember = "ProcessName";
+            listBox1.Refresh();
+
 
                 //Process memory usage
-                long x = processes[i].PagedMemorySize64;
+                /*long pagedMemory = processes[i].WorkingSet64;
 
                 for (int j = 0; j < 2; j++)
                 {
-                    x /= 1024;
+                    pagedMemory /= 1024;
                 }
-
-                processesDataGridView.Rows[i].Cells[1].Value = x + " MB";
-            }
+                processesDataGridView.Rows[i].Cells[1].Value = pagedMemory + " MB";
+                totalUsedMemory += pagedMemory;
+                label1.Text = totalUsedMemory.ToString();*/
         }
 
         private void LoadSystemInformation() 
@@ -60,6 +61,11 @@ namespace TaskManagerDOTN
             }
 
             totalMemory = totalMemory / 1000;
+        }
+
+        private void UpdateMemory()
+        {
+           
         }
 
     }
