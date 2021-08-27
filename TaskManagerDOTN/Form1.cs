@@ -93,7 +93,8 @@ namespace TaskManagerDOTN
             {
                 DisplayProcessInfo(processes[processesListBox.SelectedIndex]);
             }
-            catch (Exception)
+            catch (Exception) 
+            { 
             
                 processesListBox.SelectedIndex = 1;
             }
