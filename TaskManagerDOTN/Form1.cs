@@ -26,14 +26,15 @@ namespace TaskManagerDOTN
         public Form1()
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.FixedSingle;
 
             LoadAllProcesses();
 
+            //Load and display static information
             displayDataControler = new DisplayDataControler(this);
             displayDataControler.LoadSystemInformation();
             displayDataControler.UpdateOSData();
             displayDataControler.UpdateCPUData();
-
             
             //Timer for updating data
             InitTimer();

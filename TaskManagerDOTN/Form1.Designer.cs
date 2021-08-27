@@ -65,7 +65,7 @@ namespace TaskManagerDOTN
             this.tabControl1.Location = new System.Drawing.Point(13, 1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(775, 437);
+            this.tabControl1.Size = new System.Drawing.Size(775, 327);
             this.tabControl1.TabIndex = 0;
             // 
             // SystemInformation
@@ -82,7 +82,7 @@ namespace TaskManagerDOTN
             this.SystemInformation.Controls.Add(this.osVersion);
             this.SystemInformation.Location = new System.Drawing.Point(4, 24);
             this.SystemInformation.Name = "SystemInformation";
-            this.SystemInformation.Size = new System.Drawing.Size(767, 409);
+            this.SystemInformation.Size = new System.Drawing.Size(767, 299);
             this.SystemInformation.TabIndex = 3;
             this.SystemInformation.Text = "System Information";
             this.SystemInformation.UseVisualStyleBackColor = true;
@@ -282,7 +282,7 @@ namespace TaskManagerDOTN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 451);
+            this.ClientSize = new System.Drawing.Size(800, 340);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
