@@ -31,13 +31,15 @@ namespace TaskManagerDOTN
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Processes = new System.Windows.Forms.TabPage();
+            this.processMemoryUsageVal = new System.Windows.Forms.Label();
             this.end_process = new System.Windows.Forms.Button();
             this.processesListBox = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.processMemoryUsageText = new System.Windows.Forms.Label();
             this.processName = new System.Windows.Forms.Label();
             this.Preformance = new System.Windows.Forms.TabPage();
             this.Services = new System.Windows.Forms.TabPage();
-            this.memoryVal = new System.Windows.Forms.Label();
+            this.totalUsedMemoryText = new System.Windows.Forms.Label();
+            this.label3totalUsedMemoryVal = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.Processes.SuspendLayout();
             this.SuspendLayout();
@@ -55,10 +57,12 @@ namespace TaskManagerDOTN
             // 
             // Processes
             // 
-            this.Processes.Controls.Add(this.memoryVal);
+            this.Processes.Controls.Add(this.label3totalUsedMemoryVal);
+            this.Processes.Controls.Add(this.totalUsedMemoryText);
+            this.Processes.Controls.Add(this.processMemoryUsageVal);
             this.Processes.Controls.Add(this.end_process);
             this.Processes.Controls.Add(this.processesListBox);
-            this.Processes.Controls.Add(this.label1);
+            this.Processes.Controls.Add(this.processMemoryUsageText);
             this.Processes.Controls.Add(this.processName);
             this.Processes.Location = new System.Drawing.Point(4, 24);
             this.Processes.Name = "Processes";
@@ -67,6 +71,15 @@ namespace TaskManagerDOTN
             this.Processes.TabIndex = 0;
             this.Processes.Text = "Processes";
             this.Processes.UseVisualStyleBackColor = true;
+            // 
+            // processMemoryUsageVal
+            // 
+            this.processMemoryUsageVal.AutoSize = true;
+            this.processMemoryUsageVal.Location = new System.Drawing.Point(388, 63);
+            this.processMemoryUsageVal.Name = "processMemoryUsageVal";
+            this.processMemoryUsageVal.Size = new System.Drawing.Size(14, 15);
+            this.processMemoryUsageVal.TabIndex = 4;
+            this.processMemoryUsageVal.Text = "#";
             // 
             // end_process
             // 
@@ -84,18 +97,18 @@ namespace TaskManagerDOTN
             this.processesListBox.ItemHeight = 15;
             this.processesListBox.Location = new System.Drawing.Point(3, 63);
             this.processesListBox.Name = "processesListBox";
-            this.processesListBox.Size = new System.Drawing.Size(195, 334);
+            this.processesListBox.Size = new System.Drawing.Size(284, 334);
             this.processesListBox.TabIndex = 2;
             this.processesListBox.SelectedIndexChanged += new System.EventHandler(this.processesListBox_SelectedIndexChanged);
             // 
-            // label1
+            // processMemoryUsageText
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(204, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Memory usage:";
+            this.processMemoryUsageText.AutoSize = true;
+            this.processMemoryUsageText.Location = new System.Drawing.Point(293, 63);
+            this.processMemoryUsageText.Name = "processMemoryUsageText";
+            this.processMemoryUsageText.Size = new System.Drawing.Size(89, 15);
+            this.processMemoryUsageText.TabIndex = 1;
+            this.processMemoryUsageText.Text = "Memory usage:";
             // 
             // processName
             // 
@@ -125,14 +138,23 @@ namespace TaskManagerDOTN
             this.Services.Text = "Services";
             this.Services.UseVisualStyleBackColor = true;
             // 
-            // memoryVal
+            // totalUsedMemoryText
             // 
-            this.memoryVal.AutoSize = true;
-            this.memoryVal.Location = new System.Drawing.Point(299, 63);
-            this.memoryVal.Name = "memoryVal";
-            this.memoryVal.Size = new System.Drawing.Size(14, 15);
-            this.memoryVal.TabIndex = 4;
-            this.memoryVal.Text = "#";
+            this.totalUsedMemoryText.AutoSize = true;
+            this.totalUsedMemoryText.Location = new System.Drawing.Point(88, 45);
+            this.totalUsedMemoryText.Name = "totalUsedMemoryText";
+            this.totalUsedMemoryText.Size = new System.Drawing.Size(111, 15);
+            this.totalUsedMemoryText.TabIndex = 5;
+            this.totalUsedMemoryText.Text = "Total used memory:";
+            // 
+            // label3totalUsedMemoryVal
+            // 
+            this.label3totalUsedMemoryVal.AutoSize = true;
+            this.label3totalUsedMemoryVal.Location = new System.Drawing.Point(205, 45);
+            this.label3totalUsedMemoryVal.Name = "label3totalUsedMemoryVal";
+            this.label3totalUsedMemoryVal.Size = new System.Drawing.Size(14, 15);
+            this.label3totalUsedMemoryVal.TabIndex = 6;
+            this.label3totalUsedMemoryVal.Text = "#";
             // 
             // Form1
             // 
@@ -156,10 +178,12 @@ namespace TaskManagerDOTN
         private System.Windows.Forms.TabPage Preformance;
         private System.Windows.Forms.TabPage Services;
         private System.Windows.Forms.Label processName;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label processMemoryUsageText;
         private System.Windows.Forms.ListBox processesListBox;
         private System.Windows.Forms.Button end_process;
-        private System.Windows.Forms.Label memoryVal;
+        private System.Windows.Forms.Label processMemoryUsageVal;
+        private System.Windows.Forms.Label label3totalUsedMemoryVal;
+        private System.Windows.Forms.Label totalUsedMemoryText;
     }
 }
 

@@ -23,6 +23,7 @@ namespace TaskManagerDOTN
         private ulong totalMemory;
         private long totalUsedMemory = 0;
 
+        private Timer dataRefresh;
 
 
 
@@ -31,7 +32,8 @@ namespace TaskManagerDOTN
             InitializeComponent();
             LoadAllProcesses();
             computerInfo = new ComputerInfo(); 
-            LoadSystemInformation();
+            LoadSystemInformation(); 
+            InitTimer();
         }
 
         private void LoadAllProcesses() 
@@ -42,19 +44,8 @@ namespace TaskManagerDOTN
             {
                 processesListBox.Items.Add(process);
             }
+
             processesListBox.ValueMember = "ProcessName";
-
-
-                //Process memory usage
-                /*long pagedMemory = processes[i].WorkingSet64;
-
-                for (int j = 0; j < 2; j++)
-                {
-                    pagedMemory /= 1024;
-                }
-                processesDataGridView.Rows[i].Cells[1].Value = pagedMemory + " MB";
-                totalUsedMemory += pagedMemory;
-                label1.Text = totalUsedMemory.ToString();*/
         }
 
         private void LoadSystemInformation() 
@@ -67,11 +58,6 @@ namespace TaskManagerDOTN
             }
 
             totalMemory = totalMemory / 1000;
-        }
-
-        private void UpdateMemory()
-        {
-           
         }
 
         private void end_process_Click(object sender, EventArgs e)
@@ -94,15 +80,14 @@ namespace TaskManagerDOTN
                 DisplayProcessInfo(processes[processesListBox.SelectedIndex]);
             }
             catch (Exception) 
-            { 
-            
+            {          
                 processesListBox.SelectedIndex = 1;
             }
         }
 
         private void DisplayProcessInfo(Process selectedProcess) 
         {
-            memoryVal.Text = ConvertToMB(selectedProcess.WorkingSet64).ToString() + " MB";
+            processMemoryUsageVal.Text = ConvertToMB(selectedProcess.WorkingSet64).ToString() + " MB";
         }
 
         private long ConvertToMB(long number) 
@@ -112,6 +97,29 @@ namespace TaskManagerDOTN
                 number /= 1024;
             }
             return number;
+        }
+
+        public void InitTimer()
+        {
+            dataRefresh = new Timer();
+            dataRefresh.Tick += new EventHandler(Timer_Tick);
+            dataRefresh.Interval = 1000; // in miliseconds
+            dataRefresh.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            UpdateData();
+        }
+
+        private void UpdateData() 
+        {
+            totalUsedMemory = 0;
+            foreach (Process process in processes)
+            {
+                totalUsedMemory += process.WorkingSet64;
+            }
+            label3totalUsedMemoryVal.Text = ConvertToMB(totalUsedMemory).ToString() + " MB";
         }
     }
 }
