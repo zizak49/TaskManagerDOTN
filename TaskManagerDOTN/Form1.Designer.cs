@@ -42,10 +42,10 @@ namespace TaskManagerDOTN
             this.build = new System.Windows.Forms.Label();
             this.osVersion = new System.Windows.Forms.Label();
             this.Processes = new System.Windows.Forms.TabPage();
+            this.endProcess = new System.Windows.Forms.Button();
             this.totalUsedMemoryVal = new System.Windows.Forms.Label();
             this.totalUsedMemoryText = new System.Windows.Forms.Label();
             this.processMemoryUsageVal = new System.Windows.Forms.Label();
-            this.end_process = new System.Windows.Forms.Button();
             this.processesListBox = new System.Windows.Forms.ListBox();
             this.processMemoryUsageText = new System.Windows.Forms.Label();
             this.processName = new System.Windows.Forms.Label();
@@ -179,20 +179,30 @@ namespace TaskManagerDOTN
             // 
             // Processes
             // 
+            this.Processes.Controls.Add(this.endProcess);
             this.Processes.Controls.Add(this.totalUsedMemoryVal);
             this.Processes.Controls.Add(this.totalUsedMemoryText);
             this.Processes.Controls.Add(this.processMemoryUsageVal);
-            this.Processes.Controls.Add(this.end_process);
             this.Processes.Controls.Add(this.processesListBox);
             this.Processes.Controls.Add(this.processMemoryUsageText);
             this.Processes.Controls.Add(this.processName);
             this.Processes.Location = new System.Drawing.Point(4, 24);
             this.Processes.Name = "Processes";
             this.Processes.Padding = new System.Windows.Forms.Padding(3);
-            this.Processes.Size = new System.Drawing.Size(767, 409);
+            this.Processes.Size = new System.Drawing.Size(767, 299);
             this.Processes.TabIndex = 0;
             this.Processes.Text = "Processes";
             this.Processes.UseVisualStyleBackColor = true;
+            // 
+            // endProcess
+            // 
+            this.endProcess.Location = new System.Drawing.Point(685, 273);
+            this.endProcess.Name = "endProcess";
+            this.endProcess.Size = new System.Drawing.Size(79, 23);
+            this.endProcess.TabIndex = 7;
+            this.endProcess.Text = "End process";
+            this.endProcess.UseVisualStyleBackColor = true;
+            this.endProcess.Click += new System.EventHandler(this.end_process_Click);
             // 
             // totalUsedMemoryVal
             // 
@@ -220,16 +230,6 @@ namespace TaskManagerDOTN
             this.processMemoryUsageVal.Size = new System.Drawing.Size(14, 15);
             this.processMemoryUsageVal.TabIndex = 4;
             this.processMemoryUsageVal.Text = "#";
-            // 
-            // end_process
-            // 
-            this.end_process.Location = new System.Drawing.Point(671, 383);
-            this.end_process.Name = "end_process";
-            this.end_process.Size = new System.Drawing.Size(93, 23);
-            this.end_process.TabIndex = 3;
-            this.end_process.Text = "End process";
-            this.end_process.UseVisualStyleBackColor = true;
-            this.end_process.Click += new System.EventHandler(this.end_process_Click);
             // 
             // processesListBox
             // 
@@ -264,7 +264,7 @@ namespace TaskManagerDOTN
             this.Preformance.Location = new System.Drawing.Point(4, 24);
             this.Preformance.Name = "Preformance";
             this.Preformance.Padding = new System.Windows.Forms.Padding(3);
-            this.Preformance.Size = new System.Drawing.Size(767, 409);
+            this.Preformance.Size = new System.Drawing.Size(767, 299);
             this.Preformance.TabIndex = 1;
             this.Preformance.Text = "Preformance";
             this.Preformance.UseVisualStyleBackColor = true;
@@ -273,7 +273,7 @@ namespace TaskManagerDOTN
             // 
             this.Services.Location = new System.Drawing.Point(4, 24);
             this.Services.Name = "Services";
-            this.Services.Size = new System.Drawing.Size(767, 409);
+            this.Services.Size = new System.Drawing.Size(767, 299);
             this.Services.TabIndex = 2;
             this.Services.Text = "Services";
             this.Services.UseVisualStyleBackColor = true;
@@ -304,7 +304,6 @@ namespace TaskManagerDOTN
         private System.Windows.Forms.Label processName;
         private System.Windows.Forms.Label processMemoryUsageText;
         private System.Windows.Forms.ListBox processesListBox;
-        private System.Windows.Forms.Button end_process;
         private System.Windows.Forms.Label processMemoryUsageVal;
         private System.Windows.Forms.Label totalUsedMemoryVal;
         private System.Windows.Forms.Label totalUsedMemoryText;
@@ -322,6 +321,7 @@ namespace TaskManagerDOTN
         public System.Windows.Forms.Label socketType;
         public System.Windows.Forms.Label prrocesorrName;
         public System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button endProcess;
     }
 }
 
