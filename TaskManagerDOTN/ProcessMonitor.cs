@@ -18,9 +18,9 @@ namespace TaskManagerDOTN
             mainForm.processMemoryUsage.Text = "Memory usage: " + Form1.ConvertToMB(selectedProcess.WorkingSet64).ToString() + " MB";
             mainForm.basePriority.Text = "Base priority: " + selectedProcess.BasePriority;
             mainForm.priorityClass.Text = "Priority class: " + selectedProcess.PriorityClass;
-            mainForm.userProcessorTime.Text = "User processor time:" + selectedProcess.UserProcessorTime;
-            mainForm.privilegedProcessorTime.Text = "Privileged processor time: " + selectedProcess.PrivilegedProcessorTime;
-            mainForm.totalProcessorTime.Text = "Total processor time: " + selectedProcess.TotalProcessorTime;
+            mainForm.userProcessorTime.Text = "User processor time:" + selectedProcess.UserProcessorTime.ToString(@"hh\:mm\:ss");
+            mainForm.privilegedProcessorTime.Text = "Privileged processor time: " + selectedProcess.PrivilegedProcessorTime.ToString(@"hh\:mm\:ss");
+            mainForm.totalProcessorTime.Text = "Total processor time: " + selectedProcess.TotalProcessorTime.ToString(@"hh\:mm\:ss");
             mainForm.pagedSystemMemorySize.Text = "Paged system memory size: " + Form1.ConvertToMB(selectedProcess.PagedSystemMemorySize64).ToString() + " MB";
             mainForm.pagedMemorySize.Text = "Paged memory size:" + Form1.ConvertToMB(selectedProcess.PagedMemorySize64).ToString()+ " MB";
 
