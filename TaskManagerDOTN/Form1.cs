@@ -82,7 +82,7 @@ namespace TaskManagerDOTN
         private void DisplayProcessInfo(Process selectedProcess) 
         {
             processMonitor.UpdateSelectedProcess(selectedProcess, this);
-            //processMemoryUsage.Text = "Memory usage: " + ConvertToMB(selectedProcess.WorkingSet64).ToString() + " MB";
+            
         }
 
         public static long ConvertToMB(long number) 
