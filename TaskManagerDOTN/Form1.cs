@@ -18,6 +18,7 @@ namespace TaskManagerDOTN
         private Process selectedProcess;
 
         private DisplayDataControler displayDataControler;
+        private ProcessMonitor processMonitor;
 
         private long totalUsedMemory = 0;
 
@@ -32,6 +33,7 @@ namespace TaskManagerDOTN
 
             //Load and display static information
             displayDataControler = new DisplayDataControler(this);
+            processMonitor = new ProcessMonitor();
             displayDataControler.LoadSystemInformation();
             displayDataControler.UpdateOSData();
             displayDataControler.UpdateCPUData();
@@ -79,10 +81,11 @@ namespace TaskManagerDOTN
 
         private void DisplayProcessInfo(Process selectedProcess) 
         {
-            processMemoryUsageVal.Text = ConvertToMB(selectedProcess.WorkingSet64).ToString() + " MB";
+            processMonitor.UpdateSelectedProcess(selectedProcess, this);
+            //processMemoryUsage.Text = "Memory usage: " + ConvertToMB(selectedProcess.WorkingSet64).ToString() + " MB";
         }
 
-        public long ConvertToMB(long number) 
+        public static long ConvertToMB(long number) 
         {
             number = (number / 1024) / 1024;
             return number;
@@ -103,6 +106,11 @@ namespace TaskManagerDOTN
 
         private void UpdateData() 
         {
+            if (selectedProcess != null)
+            {
+                processMonitor.UpdateSelectedProcess(selectedProcess, this);
+            }
+
             totalUsedMemory = 0;
             foreach (Process process in processes)
             {

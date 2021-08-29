@@ -45,12 +45,18 @@ namespace TaskManagerDOTN
             this.endProcess = new System.Windows.Forms.Button();
             this.totalUsedMemoryVal = new System.Windows.Forms.Label();
             this.totalUsedMemoryText = new System.Windows.Forms.Label();
-            this.processMemoryUsageVal = new System.Windows.Forms.Label();
             this.processesListBox = new System.Windows.Forms.ListBox();
-            this.processMemoryUsageText = new System.Windows.Forms.Label();
+            this.processMemoryUsage = new System.Windows.Forms.Label();
             this.processName = new System.Windows.Forms.Label();
             this.Preformance = new System.Windows.Forms.TabPage();
             this.Services = new System.Windows.Forms.TabPage();
+            this.basePriority = new System.Windows.Forms.Label();
+            this.priorityClass = new System.Windows.Forms.Label();
+            this.userProcessorTime = new System.Windows.Forms.Label();
+            this.privilegedProcessorTime = new System.Windows.Forms.Label();
+            this.totalProcessorTime = new System.Windows.Forms.Label();
+            this.pagedSystemMemorySize = new System.Windows.Forms.Label();
+            this.pagedMemorySize = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.SystemInformation.SuspendLayout();
             this.Processes.SuspendLayout();
@@ -179,12 +185,18 @@ namespace TaskManagerDOTN
             // 
             // Processes
             // 
+            this.Processes.Controls.Add(this.pagedMemorySize);
+            this.Processes.Controls.Add(this.pagedSystemMemorySize);
+            this.Processes.Controls.Add(this.totalProcessorTime);
+            this.Processes.Controls.Add(this.privilegedProcessorTime);
+            this.Processes.Controls.Add(this.userProcessorTime);
+            this.Processes.Controls.Add(this.priorityClass);
+            this.Processes.Controls.Add(this.basePriority);
             this.Processes.Controls.Add(this.endProcess);
             this.Processes.Controls.Add(this.totalUsedMemoryVal);
             this.Processes.Controls.Add(this.totalUsedMemoryText);
-            this.Processes.Controls.Add(this.processMemoryUsageVal);
             this.Processes.Controls.Add(this.processesListBox);
-            this.Processes.Controls.Add(this.processMemoryUsageText);
+            this.Processes.Controls.Add(this.processMemoryUsage);
             this.Processes.Controls.Add(this.processName);
             this.Processes.Location = new System.Drawing.Point(4, 24);
             this.Processes.Name = "Processes";
@@ -222,15 +234,6 @@ namespace TaskManagerDOTN
             this.totalUsedMemoryText.TabIndex = 5;
             this.totalUsedMemoryText.Text = "Total used memory:";
             // 
-            // processMemoryUsageVal
-            // 
-            this.processMemoryUsageVal.AutoSize = true;
-            this.processMemoryUsageVal.Location = new System.Drawing.Point(388, 63);
-            this.processMemoryUsageVal.Name = "processMemoryUsageVal";
-            this.processMemoryUsageVal.Size = new System.Drawing.Size(14, 15);
-            this.processMemoryUsageVal.TabIndex = 4;
-            this.processMemoryUsageVal.Text = "#";
-            // 
             // processesListBox
             // 
             this.processesListBox.FormattingEnabled = true;
@@ -241,14 +244,14 @@ namespace TaskManagerDOTN
             this.processesListBox.TabIndex = 2;
             this.processesListBox.SelectedIndexChanged += new System.EventHandler(this.processesListBox_SelectedIndexChanged);
             // 
-            // processMemoryUsageText
+            // processMemoryUsage
             // 
-            this.processMemoryUsageText.AutoSize = true;
-            this.processMemoryUsageText.Location = new System.Drawing.Point(293, 63);
-            this.processMemoryUsageText.Name = "processMemoryUsageText";
-            this.processMemoryUsageText.Size = new System.Drawing.Size(89, 15);
-            this.processMemoryUsageText.TabIndex = 1;
-            this.processMemoryUsageText.Text = "Memory usage:";
+            this.processMemoryUsage.AutoSize = true;
+            this.processMemoryUsage.Location = new System.Drawing.Point(300, 65);
+            this.processMemoryUsage.Name = "processMemoryUsage";
+            this.processMemoryUsage.Size = new System.Drawing.Size(89, 15);
+            this.processMemoryUsage.TabIndex = 1;
+            this.processMemoryUsage.Text = "Memory usage:";
             // 
             // processName
             // 
@@ -278,6 +281,69 @@ namespace TaskManagerDOTN
             this.Services.Text = "Services";
             this.Services.UseVisualStyleBackColor = true;
             // 
+            // basePriority
+            // 
+            this.basePriority.AutoSize = true;
+            this.basePriority.Location = new System.Drawing.Point(300, 90);
+            this.basePriority.Name = "basePriority";
+            this.basePriority.Size = new System.Drawing.Size(75, 15);
+            this.basePriority.TabIndex = 8;
+            this.basePriority.Text = "Base priority:";
+            // 
+            // priorityClass
+            // 
+            this.priorityClass.AutoSize = true;
+            this.priorityClass.Location = new System.Drawing.Point(300, 115);
+            this.priorityClass.Name = "priorityClass";
+            this.priorityClass.Size = new System.Drawing.Size(76, 15);
+            this.priorityClass.TabIndex = 9;
+            this.priorityClass.Text = "Priority class:";
+            // 
+            // userProcessorTime
+            // 
+            this.userProcessorTime.AutoSize = true;
+            this.userProcessorTime.Location = new System.Drawing.Point(300, 140);
+            this.userProcessorTime.Name = "userProcessorTime";
+            this.userProcessorTime.Size = new System.Drawing.Size(114, 15);
+            this.userProcessorTime.TabIndex = 10;
+            this.userProcessorTime.Text = "User processor time:";
+            // 
+            // privilegedProcessorTime
+            // 
+            this.privilegedProcessorTime.AutoSize = true;
+            this.privilegedProcessorTime.Location = new System.Drawing.Point(300, 165);
+            this.privilegedProcessorTime.Name = "privilegedProcessorTime";
+            this.privilegedProcessorTime.Size = new System.Drawing.Size(143, 15);
+            this.privilegedProcessorTime.TabIndex = 11;
+            this.privilegedProcessorTime.Text = "Privileged processor time:";
+            // 
+            // totalProcessorTime
+            // 
+            this.totalProcessorTime.AutoSize = true;
+            this.totalProcessorTime.Location = new System.Drawing.Point(300, 190);
+            this.totalProcessorTime.Name = "totalProcessorTime";
+            this.totalProcessorTime.Size = new System.Drawing.Size(116, 15);
+            this.totalProcessorTime.TabIndex = 12;
+            this.totalProcessorTime.Text = "Total processor time:";
+            // 
+            // pagedSystemMemorySize
+            // 
+            this.pagedSystemMemorySize.AutoSize = true;
+            this.pagedSystemMemorySize.Location = new System.Drawing.Point(300, 215);
+            this.pagedSystemMemorySize.Name = "pagedSystemMemorySize";
+            this.pagedSystemMemorySize.Size = new System.Drawing.Size(153, 15);
+            this.pagedSystemMemorySize.TabIndex = 13;
+            this.pagedSystemMemorySize.Text = "Paged system memory size:";
+            // 
+            // pagedMemorySize
+            // 
+            this.pagedMemorySize.AutoSize = true;
+            this.pagedMemorySize.Location = new System.Drawing.Point(300, 240);
+            this.pagedMemorySize.Name = "pagedMemorySize";
+            this.pagedMemorySize.Size = new System.Drawing.Size(113, 15);
+            this.pagedMemorySize.TabIndex = 14;
+            this.pagedMemorySize.Text = "Paged memory size:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -302,9 +368,8 @@ namespace TaskManagerDOTN
         private System.Windows.Forms.TabPage Preformance;
         private System.Windows.Forms.TabPage Services;
         private System.Windows.Forms.Label processName;
-        private System.Windows.Forms.Label processMemoryUsageText;
+        public System.Windows.Forms.Label processMemoryUsage;
         private System.Windows.Forms.ListBox processesListBox;
-        private System.Windows.Forms.Label processMemoryUsageVal;
         private System.Windows.Forms.Label totalUsedMemoryVal;
         private System.Windows.Forms.Label totalUsedMemoryText;
         private System.Windows.Forms.TabPage SystemInformation;
@@ -321,7 +386,18 @@ namespace TaskManagerDOTN
         public System.Windows.Forms.Label socketType;
         public System.Windows.Forms.Label prrocesorrName;
         public System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button endProcess;
+        public System.Windows.Forms.Button endProcess;
+
+        public System.Windows.Forms.Label privilegedProcessorTime;
+        public System.Windows.Forms.Label userProcessorTime;
+        public System.Windows.Forms.Label priorityClass;
+        public System.Windows.Forms.Label basePriority;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Label totalProcessorTime;
+        public System.Windows.Forms.Label pagedSystemMemorySize;
+        public System.Windows.Forms.Label pagedMemorySize;
     }
 }
 
